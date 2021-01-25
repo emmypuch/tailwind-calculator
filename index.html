@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="w-screen h-screen flex justify-center items-center bg-gray-300">
+      <div
+        id="Calculator"
+        class="bg-blue-400 rounded-md shadow-2xl"
+        style="width: 250px; height: 395px;"
+      >
+        <div class="section1 bg-black rounded -mt-6" style="height: 90px;">
+          <div>
+            <input
+              readonly
+              id="display"
+              type="text"
+              class="bg-blue-400 mt-6 ml-6 p-2 rounded-md focus:outline-none text-blue-100 border-solid border-2 border-blue-600"
+              style="width: 200px; text-align: right;"
+            />
+          </div>
+        </div>
+
+        <div class="section2 grid grid-cols-4 grid-rows-4 gap-4 mt-4 p-2">
+          <div
+            onclick="addOperator('+')"
+            class="bg-blue-200 cursor-pointer flex justify-center rounded-md shadow-md py-2 transition duration-500 ease-in-out hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="add" class="text-xl focus:outline-none">
+              +
+            </button>
+          </div>
+
+          <div
+            onclick="addOperator('-')"
+            class="flex justify-center cursor-pointer rounded-md shadow-md bg-blue-200 transition duration-500 ease-in-out hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="subs" class="text-xl focus:outline-none">
+              -
+            </button>
+          </div>
+
+          <div
+            onclick="addOperator('*')"
+            class="bg-blue-200 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="multiply" class="text-lg focus:outline-none">
+              *
+            </button>
+          </div>
+
+          <div
+            onclick="addOperator('/')"
+            class="bg-yellow-400 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-yellow-200 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="divide" class="text-lg focus:outline-none">
+              /
+            </button>
+          </div>
+
+          <div
+            onclick="addNumber(1)"
+            class="bg-blue-200 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="one" class="text-lg focus:outline-none">
+              1
+            </button>
+          </div>
+
+          <div
+            onclick="addNumber(2)"
+            class="bg-blue-200 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="two" class="text-lg focus:outline-none">
+              2
+            </button>
+          </div>
+
+          <div
+            onclick="addNumber(3)"
+            class="bg-blue-200 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="three" class="text-lg focus:outline-none">
+              3
+            </button>
+          </div>
+
+          <div
+            onclick="erase()"
+            class="bg-red-600 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-red-300 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="clear" class="text-lg focus:outline-none">C</button>
+          </div>
+
+          <div
+            onclick="addNumber(4)"
+            class="bg-blue-200 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="four" class="text-lg focus:outline-none">
+              4
+            </button>
+          </div>
+
+          <div
+            onclick="addNumber(5)"
+            class="bg-blue-200 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="five" class="text-lg focus:outline-none">
+              5
+            </button>
+          </div>
+
+          <div
+            onclick="addNumber(6)"
+            class="bg-blue-200 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="six" class="text-lg focus:outline-none">
+              6
+            </button>
+          </div>
+
+          <div
+            onclick="clearDisplay()"
+            class="bg-yellow-400 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-yellow-200 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="ac" class="text-lg focus:outline-none">AC</button>
+          </div>
+
+          <div
+            onclick="addNumber(7)"
+            class="bg-blue-200 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="seven" class="text-lg focus:outline-none">
+              7
+            </button>
+          </div>
+
+          <div
+            onclick="addNumber(8)"
+            class="bg-blue-200 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="eight" class="text-lg focus:outline-none">
+              8
+            </button>
+          </div>
+
+          <div
+            onclick="addNumber(9)"
+            class="bg-blue-200 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="nine" class="text-lg focus:outline-none">
+              9
+            </button>
+          </div>
+
+          <div
+            onclick="calculatePercentage()"
+            class="bg-yellow-400 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-yellow-200 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="percent" class="text-lg focus:outline-none">
+              %
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 p-2">
+          <div
+            onclick="addNumber(0)"
+            class="bg-blue-200 cursor-pointer rounded-md shadow-md flex justify-center py-2 transition duration-500 ease-in-out hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110"
+            style="width: 80px;"
+          >
+            <button id="zero" class="text-lg focus:outline-none">
+              0
+            </button>
+          </div>
+
+          <div
+            onclick="addOperator('.')"
+            class="bg-yellow-400 cursor-pointer rounded-md shadow-md flex justify-center py-2 ml-2 transition duration-500 ease-in-out hover:bg-yellow-200 transform hover:-translate-y-1 hover:scale-110"
+            style="width: 60px;"
+          >
+            <button id="dot" class="text-lg focus:outline-none">.</button>
+          </div>
+
+          <div
+            onclick="execute()"
+            class="bg-blue-200 cursor-pointer rounded-md shadow-md flex justify-center transition duration-500 ease-in-out hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110"
+          >
+            <button id="equal" class="text-lg focus:outline-none">
+              =
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
